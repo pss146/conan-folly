@@ -2,6 +2,7 @@ env:
    global:
      - CONAN_DOCKER_32_IMAGES: 1
      - CONAN_TOTAL_PAGES: 2
+     - CONAN_REMOTES: https://api.bintray.com/conan/pss146/public-conan
 
 linux: &linux
    os: linux
