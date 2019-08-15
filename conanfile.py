@@ -9,12 +9,12 @@ from conans.errors import ConanInvalidConfiguration
 
 class FollyConan(ConanFile):
     name = "folly"
-    version = "2019.03.18.00"
+    version = "2019.08.12.00"
     description = "An open-source C++ components library developed and used at Facebook"
     topics = ("conan", "folly", "facebook", "components", "core", "efficiency")
-    url = "https://github.com/bincrafters/conan-folly"
+    url = "https://github.com/pss146/conan-folly"
     homepage = "https://github.com/facebook/folly"
-    author = "Bincrafters <bincrafters@gmail.com>"
+    author = "Stanislav Perepelitsyn <stas.perepel@gmail.com>"
     license = "Apache-2.0"
     settings = "os", "arch", "compiler", "build_type"
     options = {"shared": [True, False], "fPIC": [True, False]}
@@ -23,13 +23,14 @@ class FollyConan(ConanFile):
     exports_sources = ["CMakeLists.txt", "folly.patch"]
     generators = "cmake"
     requires = (
-        "boost/1.67.0@conan/stable",
+        "boost/1.70.0@conan/stable",
         "double-conversion/3.1.1@bincrafters/stable",
-        "gflags/2.2.1@bincrafters/stable",
-        "glog/20181109@bincrafters/stable",
+        "gflags/2.2.2@bincrafters/stable",
+        "glog/0.4.0@bincrafters/stable",
         "libevent/2.1.8@bincrafters/stable",
-        "lz4/1.8.3@bincrafters/stable",
-        "OpenSSL/1.0.2r@conan/stable",
+        #"lz4/1.8.3@bincrafters/stable",
+        "lz4/1.9.1@pss146/stable",
+        "OpenSSL/1.1.1c@conan/stable",
         "zlib/1.2.11@conan/stable",
         "zstd/1.3.5@bincrafters/stable",
         "snappy/1.1.7@bincrafters/stable"
@@ -89,6 +90,11 @@ class FollyConan(ConanFile):
         cmake = self._configure_cmake()
         cmake.install()
 
+    def _is_shared(self):
+        if ("shared" in self.options and not self.options.shared) or ("shared" not in self.options):
+            return False;
+        return True;
+
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
         if self.settings.os == "Linux":
@@ -100,3 +106,6 @@ class FollyConan(ConanFile):
            (self.settings.os == "Macos" and self.settings.compiler == "apple-clang" and
            Version(self.settings.compiler.version.value) == "9.0" and self.settings.compiler.libcxx == "libc++"):
             self.cpp_info.libs.append("atomic")
+        
+        if not self._is_shared() and self.settings.os == "Windows" and self.settings.compiler == "Visual Studio":
+           self.cpp_info.defines.extend(["GOOGLE_GLOG_DLL_DECL="])  # Glog requred define for MSVC
