@@ -3,6 +3,7 @@ env:
      - CONAN_DOCKER_32_IMAGES: 1
      - CONAN_TOTAL_PAGES: 2
      - CONAN_REMOTES: https://api.bintray.com/conan/pss146/public-conan
+     - CONAN_BUILD_POLICY: missing
 
 linux: &linux
    os: linux
