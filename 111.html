@@ -1,0 +1,214 @@
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.selected {
+    border: 3px solid black;
+}
+</style>
+<script type="text/javascript">
+    function handleEvent(id) {
+        selected = document.getElementsByClassName('selected');
+        if (selected[0]) selected[0].className = '';
+        cell = document.getElementById(id);
+        cell.className = 'selected';
+        elem = document.getElementById('SelectedPackage');
+        elem.innerHTML = id;
+    }
+
+</script>
+<h1>folly/2019.08.12.00@pss146/stable</h1>
+    
+<h2>'pss146':</h2>
+<table>
+<tr>
+<th></th>
+<th>x86_64 Debug</th>
+<th>x86_64 Debug<br>fPIC=True</th>
+<th>x86_64 Debug<br>shared=False<br>fPIC=True</th>
+<th>x86_64 Debug<br>shared=True<br>fPIC=True</th>
+<th>x86_64 Release</th>
+<th>x86_64 Release<br>fPIC=True</th>
+<th>x86_64 Release<br>shared=False<br>fPIC=True</th>
+<th>x86_64 Release<br>shared=True<br>fPIC=True</th>
+</tr>
+<tr>
+<td>Linux clang 6.0 (libc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="90d3b0d8d4fca11606b712def0a6cfeacb15be6f" onclick=handleEvent("90d3b0d8d4fca11606b712def0a6cfeacb15be6f")></td>
+<td bgcolor=#00ff00 id="d039d5bfa8155e48ae93579078fa4996051d8d9a" onclick=handleEvent("d039d5bfa8155e48ae93579078fa4996051d8d9a")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="d7e967b43ebc9e7cce39f11dd8d685f61c07261c" onclick=handleEvent("d7e967b43ebc9e7cce39f11dd8d685f61c07261c")></td>
+<td bgcolor=#00ff00 id="d7af8137d5c143cc86406b3beb18b063d91b71b3" onclick=handleEvent("d7af8137d5c143cc86406b3beb18b063d91b71b3")></td>
+</tr>
+<tr>
+<td>Linux clang 6.0 (libstdc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="5b05fa79978a2b94b77dff1978737e684bdd7c9e" onclick=handleEvent("5b05fa79978a2b94b77dff1978737e684bdd7c9e")></td>
+<td bgcolor=#00ff00 id="7f64de6e1dc2f60126192a12ae3b2a2ad52f7e02" onclick=handleEvent("7f64de6e1dc2f60126192a12ae3b2a2ad52f7e02")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="2dbec4dd4e2ddc2da275dada06f31e529cb95b54" onclick=handleEvent("2dbec4dd4e2ddc2da275dada06f31e529cb95b54")></td>
+<td bgcolor=#00ff00 id="87391b57234f05aba4c098d34f28a29eeaf4be5d" onclick=handleEvent("87391b57234f05aba4c098d34f28a29eeaf4be5d")></td>
+</tr>
+<tr>
+<td>Linux clang 7.0 (libc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="7b7305a6e03fefc11831a8b8512b7b37773080ab" onclick=handleEvent("7b7305a6e03fefc11831a8b8512b7b37773080ab")></td>
+<td bgcolor=#00ff00 id="db4a7013547c281e10ecccd716f49e8d156ef8b3" onclick=handleEvent("db4a7013547c281e10ecccd716f49e8d156ef8b3")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="72b469cfb781c2672abb6f97e67aab3ac9cd4e08" onclick=handleEvent("72b469cfb781c2672abb6f97e67aab3ac9cd4e08")></td>
+<td bgcolor=#00ff00 id="5e9bc8d3c60bac45d16117a87ec510df3a72435f" onclick=handleEvent("5e9bc8d3c60bac45d16117a87ec510df3a72435f")></td>
+</tr>
+<tr>
+<td>Linux clang 7.0 (libstdc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="f5d75f5d0fcbac2d5c9ba6f65bae205fac0a344b" onclick=handleEvent("f5d75f5d0fcbac2d5c9ba6f65bae205fac0a344b")></td>
+<td bgcolor=#00ff00 id="fc75872dd288cd4825c002d0e05072c1a5d3e465" onclick=handleEvent("fc75872dd288cd4825c002d0e05072c1a5d3e465")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="c4215e9b0f4b585f15220dcb05c2fd021fcaf0a4" onclick=handleEvent("c4215e9b0f4b585f15220dcb05c2fd021fcaf0a4")></td>
+<td bgcolor=#00ff00 id="c0da4d77d0fc740ecb921628ae953d3fed891806" onclick=handleEvent("c0da4d77d0fc740ecb921628ae953d3fed891806")></td>
+</tr>
+<tr>
+<td>Linux gcc 5 (libstdc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="8825ef9bc424c5ef00c9a311674032ec88c92962" onclick=handleEvent("8825ef9bc424c5ef00c9a311674032ec88c92962")></td>
+<td bgcolor=#00ff00 id="22bb85db00fad1558ab453e5938e5974ec183dc3" onclick=handleEvent("22bb85db00fad1558ab453e5938e5974ec183dc3")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="936dc0b5815bb2fd7f48103fb1a0ed20ceb7d602" onclick=handleEvent("936dc0b5815bb2fd7f48103fb1a0ed20ceb7d602")></td>
+<td bgcolor=#00ff00 id="63f8df7b6bd6a9e0d6adee226533847e02d12cdc" onclick=handleEvent("63f8df7b6bd6a9e0d6adee226533847e02d12cdc")></td>
+</tr>
+<tr>
+<td>Linux gcc 5 (libstdc++11)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="4c0fc98b9ab8d908cb3959ca0d36cbeafdae1835" onclick=handleEvent("4c0fc98b9ab8d908cb3959ca0d36cbeafdae1835")></td>
+<td bgcolor=#00ff00 id="0bde3e8c97e623f7a4c2ba321dd25207944156c0" onclick=handleEvent("0bde3e8c97e623f7a4c2ba321dd25207944156c0")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="6088990a7f9352902448c996612bef4af559e819" onclick=handleEvent("6088990a7f9352902448c996612bef4af559e819")></td>
+<td bgcolor=#00ff00 id="c75b6dd82e958518706ee0459c71251dd6e3692b" onclick=handleEvent("c75b6dd82e958518706ee0459c71251dd6e3692b")></td>
+</tr>
+<tr>
+<td>Linux gcc 6 (libstdc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="8122eedb6c32434856312906aa137d373e1b0d9d" onclick=handleEvent("8122eedb6c32434856312906aa137d373e1b0d9d")></td>
+<td bgcolor=#00ff00 id="994d98e3170dc5388ad04468e131904ad172b45a" onclick=handleEvent("994d98e3170dc5388ad04468e131904ad172b45a")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="7bd5d9b23708e44adc410a009e0e082434217248" onclick=handleEvent("7bd5d9b23708e44adc410a009e0e082434217248")></td>
+<td bgcolor=#00ff00 id="660f576afdd555ee60f56efac7e0f26b68a70354" onclick=handleEvent("660f576afdd555ee60f56efac7e0f26b68a70354")></td>
+</tr>
+<tr>
+<td>Linux gcc 6 (libstdc++11)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="ce9b4cc74a1128ab3d01e4bfb3151a4b3ef7462b" onclick=handleEvent("ce9b4cc74a1128ab3d01e4bfb3151a4b3ef7462b")></td>
+<td bgcolor=#00ff00 id="9eff6be23310c5591a9dc8d29d60b961f640fb17" onclick=handleEvent("9eff6be23310c5591a9dc8d29d60b961f640fb17")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="5a5bb3b1befdb203e1017bf241ad0b322c295a3f" onclick=handleEvent("5a5bb3b1befdb203e1017bf241ad0b322c295a3f")></td>
+<td bgcolor=#00ff00 id="d85cc2a713c9eaddcc1187f08b32cd35177db721" onclick=handleEvent("d85cc2a713c9eaddcc1187f08b32cd35177db721")></td>
+</tr>
+<tr>
+<td>Linux gcc 7 (libstdc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="1e9ccdee869227b4d97226f93cfd78e729740e98" onclick=handleEvent("1e9ccdee869227b4d97226f93cfd78e729740e98")></td>
+<td bgcolor=#00ff00 id="c0a7c4e11604fdaffdb74ade41657b3b39ed12d4" onclick=handleEvent("c0a7c4e11604fdaffdb74ade41657b3b39ed12d4")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="a97398640acc50c97528d395aefce4c32cfc2017" onclick=handleEvent("a97398640acc50c97528d395aefce4c32cfc2017")></td>
+<td bgcolor=#00ff00 id="8ab8dd3ce22515ef2afff1428ab040328aca79a6" onclick=handleEvent("8ab8dd3ce22515ef2afff1428ab040328aca79a6")></td>
+</tr>
+<tr>
+<td>Linux gcc 7 (libstdc++11)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="1a091080668b83524a2073a9a9f10979b6c8f359" onclick=handleEvent("1a091080668b83524a2073a9a9f10979b6c8f359")></td>
+<td bgcolor=#00ff00 id="c47b9ed2175e64177e41a46154b961c0f5b2b533" onclick=handleEvent("c47b9ed2175e64177e41a46154b961c0f5b2b533")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="19d7d2105b0dc07bfe9975ab6b9de4941ec559ef" onclick=handleEvent("19d7d2105b0dc07bfe9975ab6b9de4941ec559ef")></td>
+<td bgcolor=#00ff00 id="bd0103e8ff67a87bfd9def55125d93c7cf74d828" onclick=handleEvent("bd0103e8ff67a87bfd9def55125d93c7cf74d828")></td>
+</tr>
+<tr>
+<td>Linux gcc 8 (libstdc++)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="45315def9aa18d903fd82d0a0d45d75311cde302" onclick=handleEvent("45315def9aa18d903fd82d0a0d45d75311cde302")></td>
+<td bgcolor=#00ff00 id="aebafd712236301c86bfc03ebdf684f958744ecf" onclick=handleEvent("aebafd712236301c86bfc03ebdf684f958744ecf")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="ec6e924dacc0b283313e089fc61f096781f41e03" onclick=handleEvent("ec6e924dacc0b283313e089fc61f096781f41e03")></td>
+<td bgcolor=#00ff00 id="727a4819709668c07b8e95d21c4398a32bf51748" onclick=handleEvent("727a4819709668c07b8e95d21c4398a32bf51748")></td>
+</tr>
+<tr>
+<td>Linux gcc 8 (libstdc++11)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="51fcf3d2206e88018d1d2c9d321d1a9a30b18697" onclick=handleEvent("51fcf3d2206e88018d1d2c9d321d1a9a30b18697")></td>
+<td bgcolor=#00ff00 id="0edfe9075a76d07177d4fce865d37e8952c07408" onclick=handleEvent("0edfe9075a76d07177d4fce865d37e8952c07408")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="cea98931e023f5789768165ea21ef9b9761766e0" onclick=handleEvent("cea98931e023f5789768165ea21ef9b9761766e0")></td>
+<td bgcolor=#00ff00 id="287373d883f2d6839877f20ff6d27be723fb20db" onclick=handleEvent("287373d883f2d6839877f20ff6d27be723fb20db")></td>
+</tr>
+<tr>
+<td>Macos apple-clang 10.0 (libc++)</td>
+<td></td>
+<td bgcolor=#00ff00 id="00e26d1ac2c8dad24885cd2139c9fbca15ef0798" onclick=handleEvent("00e26d1ac2c8dad24885cd2139c9fbca15ef0798")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="b87df00dd8dbb606909035edd320aecbcf319679" onclick=handleEvent("b87df00dd8dbb606909035edd320aecbcf319679")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Macos apple-clang 9.1 (libc++)</td>
+<td></td>
+<td bgcolor=#00ff00 id="a593adfe48825b0436478320b525639f2a2edc3f" onclick=handleEvent("a593adfe48825b0436478320b525639f2a2edc3f")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="1a48f6533d5b83253de4b64f7ad1484b79c5b34a" onclick=handleEvent("1a48f6533d5b83253de4b64f7ad1484b79c5b34a")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 16 (MD)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#ffff00 id="0a34b0c08d16ffc965950969385c08d0f09e3822" onclick=handleEvent("0a34b0c08d16ffc965950969385c08d0f09e3822")></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 16 (MDd)</td>
+<td bgcolor=#ffff00 id="912ad04c9d89f7396c0c6d3872e9334553388ce0" onclick=handleEvent("912ad04c9d89f7396c0c6d3872e9334553388ce0")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<br>Selected: <div id="SelectedPackage"></div>
+<br>Legend<br><table><tr><td bgcolor=#ffff00>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Outdated from recipe</td></tr><tr><td bgcolor=#00ff00>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Updated</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Non existing</td></tr></table>
