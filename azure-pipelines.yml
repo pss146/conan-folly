@@ -16,6 +16,8 @@ jobs:
     env:
       CONAN_LOGIN_USERNAME: $(CONAN_LOGIN_USERNAME)
       CONAN_PASSWORD: $(CONAN_PASSWORD)
+      CONAN_REMOTES: https://api.bintray.com/conan/pss146/public-conan
+      CONAN_BUILD_POLICY: missing
   strategy:
     matrix:
       GCC4.9:
@@ -63,6 +65,8 @@ jobs:
     env:
       CONAN_LOGIN_USERNAME: $(CONAN_LOGIN_USERNAME)
       CONAN_PASSWORD: $(CONAN_PASSWORD)
+      CONAN_REMOTES: https://api.bintray.com/conan/pss146/public-conan
+      CONAN_BUILD_POLICY: missing
   strategy:
     matrix:
       CLANG8.1:
