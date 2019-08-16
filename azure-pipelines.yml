@@ -87,6 +87,7 @@ jobs:
       python -m pip install --upgrade pip
       pip.exe install conan --upgrade
       pip.exe install conan_package_tools bincrafters_package_tools
+      conan user
     displayName: 'Install conan & package tools'
 
   - script: |
@@ -102,11 +103,6 @@ jobs:
   
   strategy:
     matrix:
-      VS2019_DEBUG:
+      VS2019:
         CONAN_VISUAL_VERSIONS: 16
-        CONAN_BUILD_TYPES: Debug
-        CONAN_ARCHS: x86_64
-      VS2019_RELEASE:
-        CONAN_VISUAL_VERSIONS: 16
-        CONAN_BUILD_TYPES: Release
         CONAN_ARCHS: x86_64

@@ -92,8 +92,8 @@ class FollyConan(ConanFile):
 
     def _is_shared(self):
         if ("shared" in self.options and not self.options.shared) or ("shared" not in self.options):
-            return False;
-        return True;
+            return False
+        return True
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
@@ -108,4 +108,4 @@ class FollyConan(ConanFile):
             self.cpp_info.libs.append("atomic")
         
         if not self._is_shared() and self.settings.os == "Windows" and self.settings.compiler == "Visual Studio":
-           self.cpp_info.defines.extend(["GOOGLE_GLOG_DLL_DECL="])  # Glog requred define for MSVC
+            self.cpp_info.defines.extend(["GOOGLE_GLOG_DLL_DECL="])  # Glog requred define for MSVC
