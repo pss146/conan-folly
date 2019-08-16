@@ -76,7 +76,7 @@ jobs:
 - job: Windows
   timeoutInMinutes: 120  
   pool:
-    vmImage: 'windows-latest'
+    vmImage: $(imageName)
     
   steps:
   - task: UsePythonVersion@0
@@ -104,39 +104,10 @@ jobs:
   strategy:
     matrix:
       VS2019:
+        imageName: 'windows-latest'
         CONAN_VISUAL_VERSIONS: 16
         CONAN_ARCHS: x86_64
-
-- job: Windows
-  timeoutInMinutes: 120  
-  pool:
-    vmImage: 'vs2017-win2016'
-    
-  steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '3.7'
-  
-  - script: |
-      python -m pip install --upgrade pip
-      pip.exe install conan --upgrade
-      pip.exe install conan_package_tools bincrafters_package_tools
-      conan user
-    displayName: 'Install conan & package tools'
-
-  - script: |
-      python build.py
-    displayName: 'Run build'
-    env:
-      CONAN_LOGIN_USERNAME: $(CONAN_LOGIN_USERNAME)
-      CONAN_PASSWORD: $(CONAN_PASSWORD)
-      CONAN_REMOTES: https://api.bintray.com/conan/pss146/public-conan
-      CONAN_UPLOAD: https://api.bintray.com/conan/pss146/public-conan
-      CONAN_USERNAME: pss146
-      CONAN_BUILD_POLICY: missing
-  
-  strategy:
-    matrix:
       VS2017:
+        imageName: 'vs2017-win2016'
         CONAN_VISUAL_VERSIONS: 15
         CONAN_ARCHS: x86_64
