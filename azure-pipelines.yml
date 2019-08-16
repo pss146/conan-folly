@@ -99,7 +99,7 @@ jobs:
       CONAN_REMOTES: https://api.bintray.com/conan/pss146/public-conan
       CONAN_UPLOAD: https://api.bintray.com/conan/pss146/public-conan
       CONAN_USERNAME: pss146
-      CONAN_BUILD_POLICY: missing
+      CONAN_BUILD_POLICY: outdated
   
   strategy:
     matrix:
