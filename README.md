@@ -1,8 +1,6 @@
 ## Package Status
 
-| Bintray | Windows | Linux & macOS | 
-|:--------:|:---------:|:-----------------:|
-|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/folly%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/folly%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-folly?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-folly)|[![Build Status](https://travis-ci.com/bincrafters/conan-folly.svg?)](https://travis-ci.com/bincrafters/conan-folly)|
+[![Build Status](https://dev.azure.com/sperepelitsyn/conan-folly/_apis/build/status/pss146.conan-folly?branchName=stable/2019.08.12.00)](https://dev.azure.com/sperepelitsyn/conan-folly/_build/latest?definitionId=1&branchName=stable/2019.08.12.00)
 
 ## Conan.io Information
 
