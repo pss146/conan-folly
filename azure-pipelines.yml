@@ -63,9 +63,6 @@ jobs:
       CONAN_BUILD_POLICY: missing
   strategy:
     matrix:
-      CLANG9.0:
-        CONAN_APPLE_CLANG_VERSIONS: 9.0
-        XCODE_VERSION: 9.2
       CLANG9.1:
         CONAN_APPLE_CLANG_VERSIONS: 9.1
         XCODE_VERSION: 9.4.1
