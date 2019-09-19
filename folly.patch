@@ -1,5 +1,5 @@
 diff --git a/CMake/folly-deps.cmake b/CMake/folly-deps.cmake
-index df775c0..72ac1a6 100644
+index df775c08..72ac1a6c 100644
 --- a/CMake/folly-deps.cmake
 +++ b/CMake/folly-deps.cmake
 @@ -2,6 +2,7 @@ include(CheckCXXSourceCompiles)
@@ -35,7 +35,7 @@ index df775c0..72ac1a6 100644
  list(APPEND FOLLY_LINK_LIBRARIES ${LIBEVENT_LIB})
  list(APPEND FOLLY_INCLUDE_DIRECTORIES ${LIBEVENT_INCLUDE_DIR})
 diff --git a/build/fbcode_builder/CMake/FindGflags.cmake b/build/fbcode_builder/CMake/FindGflags.cmake
-index 246ceac..7ad6562 100644
+index 246ceacd..7ad65627 100644
 --- a/build/fbcode_builder/CMake/FindGflags.cmake
 +++ b/build/fbcode_builder/CMake/FindGflags.cmake
 @@ -48,9 +48,14 @@ if (gflags_FOUND)
@@ -57,7 +57,7 @@ index 246ceac..7ad6562 100644
    SELECT_LIBRARY_CONFIGURATIONS(LIBGFLAGS)
  
 diff --git a/build/fbcode_builder/CMake/FindGlog.cmake b/build/fbcode_builder/CMake/FindGlog.cmake
-index a589b2e..0c2fbfe 100644
+index a589b2e3..0c2fbfe6 100644
 --- a/build/fbcode_builder/CMake/FindGlog.cmake
 +++ b/build/fbcode_builder/CMake/FindGlog.cmake
 @@ -8,8 +8,8 @@
@@ -72,7 +72,7 @@ index a589b2e..0c2fbfe 100644
  find_path(GLOG_INCLUDE_DIR glog/logging.h
    PATHS ${GLOG_INCLUDEDIR})
 diff --git a/build/fbcode_builder/CMake/FindLibEvent.cmake b/build/fbcode_builder/CMake/FindLibEvent.cmake
-index dd11ebd..9ef0807 100644
+index dd11ebd8..9ef08071 100644
 --- a/build/fbcode_builder/CMake/FindLibEvent.cmake
 +++ b/build/fbcode_builder/CMake/FindLibEvent.cmake
 @@ -50,7 +50,7 @@ if (TARGET event)
@@ -85,7 +85,7 @@ index dd11ebd..9ef0807 100644
    if (LIBEVENT_LIB AND LIBEVENT_INCLUDE_DIR)
      set(LibEvent_FOUND TRUE)
 diff --git a/folly/portability/PThread.cpp b/folly/portability/PThread.cpp
-index 2891c4c..03019f3 100644
+index 2891c4cb..03019f3e 100644
 --- a/folly/portability/PThread.cpp
 +++ b/folly/portability/PThread.cpp
 @@ -18,6 +18,9 @@
@@ -116,10 +116,10 @@ index 2891c4c..03019f3 100644
          false);
      return 0;
 diff --git a/folly/portability/Windows.h b/folly/portability/Windows.h
-index f7990ca..b22fac5 100644
+index f7990ca9..0016a483 100644
 --- a/folly/portability/Windows.h
 +++ b/folly/portability/Windows.h
-@@ -26,16 +26,12 @@
+@@ -26,16 +26,13 @@
  // These have to be this way because we define our own versions
  // of close(), because the normal Windows versions don't handle
  // sockets at all.
@@ -135,6 +135,7 @@ index f7990ca..b22fac5 100644
 -#endif
 +#include <corecrt.h>
 +#pragma push_macro("_CRT_INTERNAL_NONSTDC_NAMES")
++#undef _CRT_INTERNAL_NONSTDC_NAMES
 +#define _CRT_INTERNAL_NONSTDC_NAMES 0
 +#include <direct.h>
 +#include <io.h>
