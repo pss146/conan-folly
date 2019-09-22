@@ -28,7 +28,6 @@ class FollyConan(ConanFile):
         "gflags/2.2.2@bincrafters/stable",
         "glog/0.4.0@bincrafters/stable",
         "libevent/2.1.8@bincrafters/stable",
-        #"lz4/1.8.3@bincrafters/stable",
         "lz4/1.9.1@pss146/stable",
         "OpenSSL/1.1.1c@conan/stable",
         "zlib/1.2.11@conan/stable",
@@ -77,6 +76,9 @@ class FollyConan(ConanFile):
 
     def _configure_cmake(self):
         cmake = CMake(self)
+        # if not self._is_shared():
+        #     cmake.definitions["GOOGLE_GLOG_DLL_DECL"] = ""
+        cmake.definitions["BUILD_SHARED_LIBS"] = self._is_shared()
         cmake.configure()
         return cmake
 
@@ -91,9 +93,9 @@ class FollyConan(ConanFile):
         cmake.install()
 
     def _is_shared(self):
-        if ("shared" in self.options and not self.options.shared) or ("shared" not in self.options):
-            return False
-        return True
+        if ("shared" in self.options and self.options.shared):
+            return True
+        return False
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
@@ -107,5 +109,5 @@ class FollyConan(ConanFile):
            Version(self.settings.compiler.version.value) == "9.0" and self.settings.compiler.libcxx == "libc++"):
             self.cpp_info.libs.append("atomic")
         
-        if not self._is_shared() and self.settings.os == "Windows" and self.settings.compiler == "Visual Studio":
-            self.cpp_info.defines.extend(["GOOGLE_GLOG_DLL_DECL="])  # Glog requred define for MSVC
+        if not self._is_shared():
+            self.cpp_info.defines.append("GOOGLE_GLOG_DLL_DECL=")  # Glog requred define for MSVC
