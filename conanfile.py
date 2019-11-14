@@ -48,7 +48,7 @@ class FollyConan(ConanFile):
         if self.settings.os == "Windows" and \
             self.settings.compiler == "Visual Studio" and \
             compiler_version < "15":
-            raise ConanInvalidConfiguration("Folly could not be built by Visual Studio < 14")
+            raise ConanInvalidConfiguration("Folly could not be built by Visual Studio < 15")
         elif self.settings.os == "Windows" and \
             self.settings.arch != "x86_64":
             raise ConanInvalidConfiguration("Folly requires a 64bit target architecture")
@@ -103,10 +103,8 @@ class FollyConan(ConanFile):
             self.cpp_info.libs.extend(["pthread", "dl"])
         elif self.settings.os == "Windows" and self.settings.compiler == "Visual Studio":
             self.cpp_info.libs.extend(["ws2_32", "Iphlpapi", "Crypt32"])
-        if (self.settings.os == "Linux" and self.settings.compiler == "clang" and
-           Version(self.settings.compiler.version.value) == "6" and self.settings.compiler.libcxx == "libstdc++") or \
-           (self.settings.os == "Macos" and self.settings.compiler == "apple-clang" and
-           Version(self.settings.compiler.version.value) == "9.0" and self.settings.compiler.libcxx == "libc++"):
+        
+        if (self.settings.os == "Linux" and self.settings.compiler == "clang" and self.settings.compiler.libcxx == "libstdc++"):
             self.cpp_info.libs.append("atomic")
         
         if not self._is_shared():
